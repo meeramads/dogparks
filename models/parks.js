@@ -5,3 +5,7 @@ const parkSchema = new mongoose.Schema({
     city: { type: String, required: true},
     address: String
 });
+
+const Park = mongoose.model('Park', parkSchema)
+
+module.exports = Park
