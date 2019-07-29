@@ -4,9 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Parks</title>
 </head>
 <body>
-    <h1>Parks page</h1>
+    <header>
+        <h1>Parks</h1>
+        <nav>
+            <ul>
+                <li>
+                    <a href="/users">Home</a>
+                </li>
+                <li>
+                    <a href="/parks">Parks</a>
+                </li>
+                <li>
+                    <a href="/users/new">User</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Parks</h2>
+      <ul>
+          <% for(let i = 0; i < parks.length; i++){ %>
+              <li>
+                  <a href="/parks/<%=parks[i]._id%>"><%=parks[i].name%></a>
+              </li>
+          <% } %>
+      </ul>
+    </main>
 </body>
 </html>
