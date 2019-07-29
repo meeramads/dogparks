@@ -8,23 +8,31 @@
 </head>
 <body>
     <header>
-        <h1>HOME PAGE</h1>
+        <h1>Dog Park App</h1>
             <nav>
                 <ul>
                     <li>
-                        <a href="/users">Home</a>
+                        <a href="/">Home</a>
                     </li>
                     <li>
                         <a href="/parks">Parks</a>
                     </li>
                     <li>
-                        <a href="/users/new">Register</a>
+                        <a href="/users/:id">User</a>
                     </li>
                 </ul>
             </nav>
     </header>
     <main>
-    
+        <form action="/users/:id" method="POST">
+            <label>Username:</label>
+            <input type="text" name="username">
+            <label>Password:</label>
+            <input type="password" name="password">
+            <input type="submit" value="Login">
+        </form>
+
+        <a href="users/new">Sign up</a>
     </main>
     
     
