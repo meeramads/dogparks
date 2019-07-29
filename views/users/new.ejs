@@ -9,27 +9,27 @@
 <body>
      <header>
         <h1>REGISTER PAGE</h1>
-            <nav>
-                <ul>
-                    <li>
-                        <a href="/users">Home</a>
-                    </li>
-                    <li>
-                        <a href="/parks">Parks</a>
-                    </li>
-                    <li>
-                        <a href="/users/new">Register</a>
-                    </li>
-                </ul>
-            </nav>
+        <nav>
+            <ul>
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                <li>
+                    <a href="/parks">Parks</a>
+                </li>
+                <li>
+                    <a href="/users/new">Register</a>
+                </li>
+            </ul>
+        </nav>
     </header>
     <main>
 
-        <form action="/" method="POST">
+        <form action="/users" method="POST">
             <label>Email:</label>
             <input type="text" name="email">
             <label>Username:</label>
-            <input type="text" name="username">
+            <input type="text" name="name">
             <label>Password:</label>
             <input type="password" name="password">
             <input type="submit" value="Register">
