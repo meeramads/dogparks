@@ -7,13 +7,14 @@ const app = express();
 //require db
 require('./db/db')
 
+//require controllers
+const usersController = require('./controllers/users.js')
+const parksController = require('./controllers/parks.js')
+
+
 //middleware 
 app.use(bodyParser.urlencoded({extended:false}))
 app.use(methodOverride('_method'))
-//require controllers
-const usersController = require('./controllers/users')
-const parksController = require('./controllers/parks')
-
 
 //use controllers 
 app.use('/parks', parksController);

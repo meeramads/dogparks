@@ -1,31 +1,42 @@
 const express = require('express');
 const router = express.Router();
-const Users = require('../models/users');
+const User = require('../models/users');
 
 //user home route
 router.get('/', (req,res) => {
-    res.render('users/index.ejs')
+    User.find({}, (err,foundUsers)=>{
+        res.render('users/show.ejs',{
+            users: foundUsers
+        })
+    })
+   
 })
 
-//register route
-router.get('/new', (req,res) => {
+//user new page 
+router.get('/new', (req,res)=>{
     res.render('users/new.ejs')
 })
 
-//post register route
-router.post('/', (req,res) => {
-    User.create(req.body, (err,createdUser) => {
-        res.redirect('/users')
-    })
-})
-
-//show route
-router.get('/:id',(req,res) => {
-    User.findById(req.params.id, (err, foundUSer) => {
-        res.render('users/show.ejs', {
-            user: foundUser
+//get specific user
+router.get("/:id", (req,res)=>{
+    User.findById(req.params.id, (err, user)=>{
+        res.render('users/show.ejs',{
+            user: user
         })
     })
 })
+
+//post route for new user
+router.post('/', (req,res)=>{
+    User.create(req.body,(err,createdUser)=>{
+        console.log(createdUser)
+        if(err){
+            console.log(err)
+        }
+        res.redirect(`/users/${createdUser._id}`)
+    })
+})
+
+
 
 module.exports = router;
