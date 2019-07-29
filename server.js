@@ -13,7 +13,7 @@ const parksController = require('./controllers/parks.js')
 
 
 //middleware 
-app.use(bodyParser.urlencoded({extended:false}))
+app.use(bodyParser.urlencoded({extended:true}))
 app.use(methodOverride('_method'))
 
 //use controllers 
