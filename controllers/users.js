@@ -1,6 +1,9 @@
 const express = require('express');
 const router = express.Router();
+//Users controller model
 const User = require('../models/users');
+//Parks controller model
+const Park = require('../models/parks')
 
 //user home route
 // router.get('/', (req,res) => {

@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const Park = require('./models/parks.js')
+const Park = require('../models/parks.js')
 
 const userSchema = new mongoose.Schema({
     name: { type: String, required: true},
