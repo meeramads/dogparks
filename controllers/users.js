@@ -3,17 +3,17 @@ const router = express.Router();
 const User = require('../models/users');
 
 //user home route
-router.get('/', (req,res) => {
-    User.find({}, (err,foundUsers)=>{
-        res.render('users/index.ejs',{
-            users: foundUsers
-        })
-    })
+// router.get('/', (req,res) => {
+//     User.find({}, (err,foundUsers)=>{
+//         res.render('users/index.ejs',{
+//             users: foundUsers
+//         })
+//     })
    
-})
+// })
 
 //user new page 
-router.get('/new', (req,res)=>{
+router.get('/new', (req,res)=>{   
     res.render('users/new.ejs')
 })
 

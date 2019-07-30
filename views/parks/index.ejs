@@ -7,6 +7,37 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Parks page</h1>
+    <header>
+        <h1>Dog Park App || Parks Home Page</h1>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    <li>
+                        <a href="/parks">Parks</a>
+                    </li>
+                    <li>
+                        <a href="/users/:id">User</a>
+                    </li>
+                </ul>
+            </nav>
+    </header>
+    <main>
+        <a href="parks/new">Create Park</a>
+
+        <section>
+            <%for(let i = 0; i < parks.length; i++){%>
+                <ul>
+                    <li>
+                        <%=parks.name%>
+                    </li>
+                </ul>
+            <%}%>
+        </section>
+    </main>
+
+    
+
 </body>
 </html>
