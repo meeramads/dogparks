@@ -33,7 +33,7 @@ router.post('/', (req,res)=>{
 // })
 
 router.get('/', (req, res) => {
-    Parks.find({}, (err, foundParks) => {
+    Park.find({}, (err, foundParks) => {
       if(err){
         res.send(err);
       } else {
@@ -53,7 +53,7 @@ router.get('/new', (req,res) => {
 // show park route
 router.get('/:id', (req,res)=>{
     console.log(req.params, "params in the show route")
-    Parks.findById(req.params.id, (err, foundPark)=>{
+    Park.findById(req.params.id, (err, foundPark)=>{
         if(err){
             res.send(err);
         } else {
@@ -68,7 +68,7 @@ router.get('/:id', (req,res)=>{
 // edit park route
 router.get('/:id/edit', (req,res)=>{
     console.log(req.params, "params in the edit route")
-    Parks.findById(req.params.id, (err, foundPark)=>{
+    Park.findById(req.params.id, (err, foundPark)=>{
         if(err){
             res.send(err);
         } else {
@@ -82,7 +82,7 @@ router.get('/:id/edit', (req,res)=>{
 
 // put park route
 router.delete('/:id', (req, res) =>{
-    Parks.findOneAndDelete(req.params.id, (err, response) => {
+    Park.findOneAndDelete(req.params.id, (err, response) => {
         if(err){
             res.send(err);
         } else {
