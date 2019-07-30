@@ -7,6 +7,31 @@
     <title>Edit Park</title>
 </head>
 <body>
+    <header>
+        <h1>Edit Park</h1>
+        <nav>
+            <ul>
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                <li>
+                    <a href="/parks">Parks</a>
+                </li>
+                <li>
+                    <a href="/users/new">User</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <form action="/parks/<%=park._id%>?_method=PUT" method="post">
+            <input type="text" name="name" value="<%=park.name%>"/><br/>
+            
+            <input type="file" name="pic" value="<%=park.image%>" accept="image/*">
+
+        </form>
+    </main>
     
 </body>
 </html>
