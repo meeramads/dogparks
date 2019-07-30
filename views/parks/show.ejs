@@ -7,6 +7,32 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <header>
+        <h1>Park</h1>
+        <nav>
+            <ul>
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                <li>
+                    <a href="/parks">Parks</a>
+                </li>
+                <li>
+                    <a href="/users/new">User</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2> <%=park.name%></h2>
+        <section>
+            <form action="/parks/<%=park._id%>?_method=DELETE" method=POST>
+                <input type="submit" value="Delete Park"/>
+            </form>
+        </section>
+        <section>
+            <a href="/parks/<%=park._id%>/edit">Edit</a>
+        </section>
+    </main>
 </body>
 </html>
