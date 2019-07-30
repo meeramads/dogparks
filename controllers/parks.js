@@ -3,9 +3,6 @@ const router = express.Router();
 const Parks = require('../models/parks');
 
 //park index route
-// router.get('/', (req,res) => {
-//     res.render('parks/index.ejs')
-// })
 
 router.get('/', (req, res) => {
     Parks.find({}, (err, foundParks) => {
@@ -55,7 +52,7 @@ router.get('/:id/edit', (req,res)=>{
     });
 });
 
-// put park route
+// delete park route
 router.delete('/:id', (req, res) =>{
     Parks.findOneAndDelete(req.params.id, (err, response) => {
         if(err){
@@ -67,6 +64,7 @@ router.delete('/:id', (req, res) =>{
     });
 });
 
+// put park route
 router.put('/:id', (req, res) => {
     Parks.findByIdAndUpdate(req.params.id, req.body, (err, updateResponse) => {
         if(err){
