@@ -7,6 +7,6 @@ const parkSchema = new mongoose.Schema({
     imageSrc: String 
 });
 
-const Park = mongoose.model('Park', parkSchema)
+const Park = mongoose.model('Park', parkSchema);
 
-module.exports = Park
+module.exports = Park;
