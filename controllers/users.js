@@ -4,6 +4,8 @@ const router = express.Router();
 const User = require('../models/users');
 //Parks controller model
 const Park = require('../models/parks')
+//bcrypt
+const bcrypt = require('bcryptjs');
 
 
 //user home route
@@ -29,7 +31,7 @@ router.get('/new', (req,res)=>{
 router.get('/:id', (req, res)=>{
     Park.find({}, (err, allParks)=>{
         User.findById(req.params.id, (err, user) => {
-            console.log(allParks)
+            // console.log(allParks)
             res.render('users/show.ejs', {
                 parks: allParks,
                 user: user
@@ -71,14 +73,30 @@ router.delete('/:id', (req,res)=>{
 })
 
 //post route for new user
-router.post('/', (req,res)=>{
-    User.create(req.body,(err,createdUser)=>{
-        console.log(createdUser)
-        if(err){
-            console.log(err)
+router.post('/', async (req,res)=>{
+    try{
+        const password = req.body.password
+        const hashedPassword = bcrypt.hashSync(password, bcrypt.genSaltSync(10))
+        const newUser = {
+            username: req.body.username,
+            name: req.body.name,
+            password: hashedPassword,
+            email: req.body.email,
+            city: req.body.city
         }
-        res.redirect(`/users/${createdUser.id}`)
-    })
+        User.create(newUser,(err,createdUser)=>{
+            if(err){
+                res.send(err)
+            } else {
+                req.session.username = createdUser.username
+                req.session.logged = true
+                req.session.id = createdUser._id
+                res.redirect(`/users/${createdUser.id}`)
+            }
+        })
+    } catch(err){
+        res.send(err)
+    }
 })
 
 

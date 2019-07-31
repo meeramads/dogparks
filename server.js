@@ -10,6 +10,7 @@ require('./db/db')
 //require controllers
 const usersController = require('./controllers/users.js')
 const parksController = require('./controllers/parks.js')
+const authController = require('./controllers/auth.js')
 
 
 //middleware 
@@ -25,6 +26,7 @@ app.use(session({
 //use controllers 
 app.use('/parks', parksController);
 app.use('/users', usersController);
+app.use('/auth', authController)
 
 //route for home page
 app.get('/', (req,res) => {
