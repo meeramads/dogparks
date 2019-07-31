@@ -15,6 +15,7 @@ const parksController = require('./controllers/parks.js')
 //middleware 
 app.use(bodyParser.urlencoded({extended:true}))
 app.use(methodOverride('_method'))
+app.use(express.static('public'))
 
 //use controllers 
 app.use('/parks', parksController);

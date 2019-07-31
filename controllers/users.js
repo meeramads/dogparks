@@ -18,7 +18,6 @@ router.get('/:id', (req, res)=>{
     });
 });
 
-
 //user home route
 router.get('/', (req,res) => {
     User.find({}, (err,foundUsers)=>{
