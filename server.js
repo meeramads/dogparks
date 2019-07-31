@@ -11,7 +11,6 @@ require('./db/db')
 const usersController = require('./controllers/users.js')
 const parksController = require('./controllers/parks.js')
 
-
 //middleware 
 app.use(bodyParser.urlencoded({extended:true}))
 app.use(methodOverride('_method'))
