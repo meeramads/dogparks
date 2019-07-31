@@ -7,6 +7,7 @@ const User = require('../models/users')
 //bcrypt
 const bcrypt = require('bcryptjs')
 
+//password check 
 router.post('/login', async (req,res)=>{
     try {
         const foundUser = await User.findOne({username: req.body.username})
@@ -27,6 +28,14 @@ router.post('/login', async (req,res)=>{
         res.send(err)
     }
 })
+
+//log out 
+router.get('/logout', (req, res) => {
+    req.session.destroy((err)=>{
+        console.log(req.session)
+        res.redirect('/')
+    })
+  })
 
 
 module.exports = router 
