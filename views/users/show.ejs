@@ -37,6 +37,15 @@
                 <input type="submit" value="Delete Account"/>
             </form>
         </section>
+        <section>
+            <%for(let i = 0; i < parks.length; i++){%>
+                <ul>
+                    <li><%=parks[i].name%></li>
+                    <li><%=parks[i].city%></li>
+                    <li><%=parks[i].address%></li>
+                </ul>
+            <%}%>  
+        </section>
     </main>
 </body>
 </html>

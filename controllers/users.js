@@ -5,15 +5,29 @@ const User = require('../models/users');
 //Parks controller model
 const Park = require('../models/parks')
 
+//parks on new page
+router.get('/:id', (req, res)=>{
+    Park.find({}, (err, allParks)=>{
+        User.findById(req.params.id, (err, user) => {
+            console.log(allParks)
+            res.render('users/show.ejs', {
+                parks: allParks,
+                user: user
+            });
+        })
+    });
+});
+
+
 //user home route
-// router.get('/', (req,res) => {
-//     User.find({}, (err,foundUsers)=>{
-//         res.render('users/index.ejs',{
-//             users: foundUsers
-//         })
-//     })
+router.get('/', (req,res) => {
+    User.find({}, (err,foundUsers)=>{
+        res.render('users/index.ejs',{
+            users: foundUsers
+        })
+    })
    
-// })
+})
 
 //user new page 
 router.get('/new', (req,res)=>{   
