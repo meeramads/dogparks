@@ -11,7 +11,7 @@ router.get('/', (req, res) => {
       if(err){
         res.send(err);
       } else {
-        console.log(foundParks)
+        // console.log(foundParks)
         res.render('parks/index.ejs', {
           parks: foundParks
         });
@@ -26,12 +26,12 @@ router.get('/new', (req,res) => {
 
 // show park route
 router.get('/:id', (req,res)=>{
-    console.log(req.params, "params in the show route")
+    // console.log(req.params, "params in the show route")
     Park.findById(req.params.id, (err, foundPark)=>{
         if(err){
             res.send(err);
         } else {
-            console.log(foundPark, "<--- show route, document from mongodb")
+            // console.log(foundPark, "<--- show route, document from mongodb")
             res.render('parks/show.ejs', {
                 park: foundPark
             });
@@ -41,12 +41,12 @@ router.get('/:id', (req,res)=>{
 
 // edit park route
 router.get('/:id/edit', (req,res)=>{
-    console.log(req.params, "params in the edit route")
+    // console.log(req.params, "params in the edit route")
     Park.findById(req.params.id, (err, foundPark)=>{
         if(err){
             res.send(err);
         } else {
-            console.log(foundPark, "<--- edit route, document from mongodb")
+            // console.log(foundPark, "<--- edit route, document from mongodb")
             res.render('parks/edit.ejs', {
                 park: foundPark
             });
@@ -60,7 +60,7 @@ router.delete('/:id', (req, res) =>{
         if(err){
             res.send(err);
         } else {
-            console.log(response, "<--- Delete route");
+            // console.log(response, "<--- Delete route");
             res.redirect('/parks');
         }
     });
@@ -72,7 +72,7 @@ router.put('/:id', (req, res) => {
         if(err){
             res.send(err);
         } else {
-            console.log(updateResponse, "<--- put route response from db");
+            // console.log(updateResponse, "<--- put route response from db");
             res.redirect('/parks/' + req.params.id);
         }
     })
@@ -80,12 +80,12 @@ router.put('/:id', (req, res) => {
 
 // post park route
 router.post('/', (req, res) => {
-    console.log(req.body, "req.body");
+    // console.log(req.body, "req.body");
     Parks.create(req.body, (err, createdPark) => {
         if(err){
             res.send(err);
         } else {
-            console.log(createdPark, "<--- createdPark in post route");
+            // console.log(createdPark, "<--- createdPark in post route");
             res.redirect('/parks');
         }
     });
