@@ -1,6 +1,22 @@
 const express = require('express');
 const router = express.Router();
+//user model
 const User = require('../models/users');
+//park model 
+const Park = require('../models/parks')
+
+//parks on new page
+router.get('/:id', (req, res)=>{
+    Park.find({}, (err, allParks)=>{
+        User.findById(req.params.id, (err, user) => {
+            console.log(allParks)
+            res.render('users/show.ejs', {
+                parks: allParks,
+                user: user
+            });
+        })
+    });
+});
 
 //user home route
 router.get('/', (req,res) => {

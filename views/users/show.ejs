@@ -18,7 +18,7 @@
                         <a href="/parks">Parks</a>
                     </li>
                     <li>
-                        <a href="/users/:id">User</a>
+                        <a href="/users/<%=user.id%>">User</a>
                     </li>
                 </ul>
             </nav>
@@ -36,6 +36,16 @@
             <form action="/users/<%=user.id%>?_method=DELETE" method="POST">
                 <input type="submit" value="Delete Account"/>
             </form>
+        </section>
+        <section>
+            <%for(let i = 0; i < parks.length; i++){%>
+                <ul>
+                    <li><%=parks[i].name%></li>
+                    <li><%=parks[i].city%></li>
+                    <li><%=parks[i].address%></li>
+                </ul>
+            <%}%>
+            
         </section>
     </main>
 </body>
