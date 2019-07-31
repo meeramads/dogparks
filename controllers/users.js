@@ -5,6 +5,26 @@ const User = require('../models/users');
 //park model 
 const Park = require('../models/parks')
 
+
+//user home route
+router.get('/', (req,res) => {
+    User.find({}, (err,foundUsers)=>{
+        res.render('users/index.ejs',{
+            users: foundUsers
+        })
+    })
+    
+})
+
+// /:id === /new
+
+//user new page 
+router.get('/new', (req,res)=>{
+    res.render('users/new.ejs')
+})
+
+
+
 //parks on new page
 router.get('/:id', (req, res)=>{
     Park.find({}, (err, allParks)=>{
@@ -17,23 +37,6 @@ router.get('/:id', (req, res)=>{
         })
     });
 });
-
-//user home route
-router.get('/', (req,res) => {
-    User.find({}, (err,foundUsers)=>{
-        res.render('users/index.ejs',{
-            users: foundUsers
-        })
-    })
-   
-})
-
-//user new page 
-router.get('/new', (req,res)=>{
-    res.render('users/new.ejs')
-})
-
-
 
 //get specific user
 router.get("/:id", (req,res)=>{
