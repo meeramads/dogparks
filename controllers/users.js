@@ -1,6 +1,10 @@
 const express = require('express');
 const router = express.Router();
+//Users controller model
 const User = require('../models/users');
+//Parks controller model
+const Park = require('../models/parks')
+
 
 //user home route
 router.get('/', (req,res) => {
@@ -9,15 +13,30 @@ router.get('/', (req,res) => {
             users: foundUsers
         })
     })
-   
+    
 })
 
+// /:id === /new
+
 //user new page 
-router.get('/new', (req,res)=>{
+router.get('/new', (req,res)=>{   
     res.render('users/new.ejs')
 })
 
 
+
+//parks on new page
+router.get('/:id', (req, res)=>{
+    Park.find({}, (err, allParks)=>{
+        User.findById(req.params.id, (err, user) => {
+            console.log(allParks)
+            res.render('users/show.ejs', {
+                parks: allParks,
+                user: user
+            });
+        })
+    });
+});
 
 //get specific user
 router.get("/:id", (req,res)=>{
