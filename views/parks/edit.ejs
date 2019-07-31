@@ -27,8 +27,8 @@
     <main>
         <form action="/parks/<%=park._id%>?_method=PUT" method="post">
             <input type="text" name="name" value="<%=park.name%>"/><br/>
-            
             <input type="file" name="pic" value="<%=park.image%>" accept="image/*">
+            <input type="submit" value="submit">
 
         </form>
     </main>
