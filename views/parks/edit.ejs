@@ -28,16 +28,34 @@
         </div>
     </nav> 
     <header>
-        <h1>Edit Park</h1>
+        
     </header>
 
     <main>
-        <form action="/parks/<%=park._id%>?_method=PUT" method="post">
-            <input type="text" name="name" value="<%=park.name%>"/><br/>
-            <input type="file" name="pic" value="<%=park.image%>" accept="image/*">
-            <input type="submit" value="submit">
-
-        </form>
+        <div id="edit-park-form" class="justify-content-center">
+            <h1>Edit Park</h1>
+            <div>
+                <form action="/parks/<%=park._id%>?_method=PUT" method="post">
+                    <div class="form-group">
+                        <label>Name:</label>
+                        <input class="form-control" type="text" name="name" value="<%=park.name%>"/><br/>
+                    </div>
+                    <div class="form-group">
+                        <label>City:</label>
+                        <input class="form-control" type="text" name="city" value="<%=park.city%>"/><br/>
+                    </div>
+                    <div class="form-group">
+                        <label>Address:</label>
+                        <input class="form-control" type="text" name="address" value="<%=park.address%>"/><br/>
+                    </div>
+                    <div class="form-group">
+                        <label>Img:</label>
+                        <input class="form-control" type="text" name="imgSrc"/><br/>
+                    </div>
+                    <input class="btn btn-outline-primary" type="submit" value="submit">
+                </form>
+            </div>
+        </div>
     </main>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

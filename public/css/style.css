@@ -1,5 +1,13 @@
+@import url('https://fonts.googleapis.com/css?family=Pacifico|Signika&display=swap');
 body{
+    font-family: 'Signika', sans-serif;
     background-color: rgb(246, 242, 252);
+}
+
+#main-heading{
+    margin-top: 3rem;
+    font-family: 'Pacifico', cursive;
+    font-size: 6rem;
 }
 
 nav{
@@ -35,8 +43,7 @@ form{
 
 #index-form{
     border-radius: 2rem;
-    margin-top: 5rem;
-    margin-right: 7rem;
+    margin-right: 12rem;
     padding: 3rem;
     background-color: white;
 }
@@ -62,8 +69,16 @@ form{
     background-color: white;
 }
 
+#edit-park-form{
+    border-radius: 1rem;
+    margin: 5rem;
+    padding: 3rem;
+    background-color: white;
+}
+
 #homepage-paw{
-    margin-top: 10rem;
+    margin-top: 5rem;
     margin-left: 10rem;
     font-size: 20rem;
 }
+
