@@ -18,3 +18,23 @@ nav{
 .navbar-brand{
     color: white;
 }
+
+form{
+    margin: 3rem;
+}
+
+
+#index-form{
+    border-radius: 2rem;
+    margin-top: 5rem;
+    margin-right: 7rem;
+    padding: 3rem;
+    background-color: white;
+}
+
+#register-form{
+    border-radius: 1rem;
+    margin: 5rem;
+    padding: 3rem;
+    background-color: white;
+}
