@@ -43,6 +43,9 @@
                     <% for(let i=0; i < parks.length; i++){ %>
                           <li>
                               <a href="/parks/<%=parks[i]._id%>"><%=parks[i].name%></a>
+                              <a href="/parks/<%=parks[i]._id%>">
+                                <img src="<%=parks[i].imgSrc%>" class="class="img-thumbnail>
+                              </a>
                           </li>
                     <% } %>
                 </ul>
