@@ -29,17 +29,24 @@
         </div>
     </nav> 
     <header>
-        <h1>Parks</h1>
-        <a href="/parks/new"><span class="fa fa-plus-circle fa-sm"></span>  New Park</a>
+      <div class="container">
+            <h1> Parks Gallery </h1>
+            <hr class="mt-2 mb-2">
+            <a href="/parks/new" id="newpark"><span class="fa fa-plus-circle fa-sm"></span>  New Park</a>
+      </div>
+      
     </header>
     <main>
-      <ul>
-          <% for(let i=0; i < parks.length; i++){ %>
-                <li>
-                    <a href="/parks/<%=parks[i]._id%>"><%=parks[i].name%></a>
-                </li>
-          <% } %>
-      </ul>
+        <div class ="container">
+                <ul>
+                    <% for(let i=0; i < parks.length; i++){ %>
+                          <li>
+                              <a href="/parks/<%=parks[i]._id%>"><%=parks[i].name%></a>
+                          </li>
+                    <% } %>
+                </ul>
+
+        </div>
     </main>
     <script src="https://kit.fontawesome.com/f3c7202777.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
