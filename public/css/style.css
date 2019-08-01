@@ -31,3 +31,10 @@ form{
     padding: 3rem;
     background-color: white;
 }
+
+#register-form{
+    border-radius: 1rem;
+    margin: 5rem;
+    padding: 3rem;
+    background-color: white;
+}
