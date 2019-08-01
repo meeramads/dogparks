@@ -19,15 +19,14 @@ nav{
     color: white;
 }
 
-
 #newpark{
     color: rgb(113, 113, 113);
     float: right;
 }
+
 form{
     margin: 3rem;
 }
-
 
 #index-form{
     border-radius: 2rem;
