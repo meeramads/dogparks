@@ -1,3 +1,12 @@
 body{
     background-color: rgba(125, 123, 224, 0.952);
 }
+
+.fa-paw{
+    font-size: 4rem;
+}
+
+div{
+    background-color: whitesmoke;
+    padding: 1rem;
+}
