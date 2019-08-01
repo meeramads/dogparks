@@ -62,7 +62,7 @@ router.delete('/:id', (req, res) =>{
 
 // put park route
 router.put('/:id', (req, res) => {
-    Parks.findByIdAndUpdate(req.params.id, req.body, (err, updateResponse) => {
+    Park.findByIdAndUpdate(req.params.id, req.body, (err, updateResponse) => {
         if(err){
             res.send(err);
         } else {
@@ -73,7 +73,7 @@ router.put('/:id', (req, res) => {
 
 // post park route
 router.post('/', (req, res) => {
-    Parks.create(req.body, (err, createdPark) => {
+    Park.create(req.body, (err, createdPark) => {
         if(err){
             res.send(err);
         } else {
