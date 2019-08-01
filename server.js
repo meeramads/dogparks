@@ -4,6 +4,10 @@ const methodOverride = require('method-override');
 const session = require('express-session')
 const app = express();
 
+require('dotenv').config();
+const PORT = process.env.PORT
+
+
 //require db
 require('./db/db')
 
@@ -33,6 +37,6 @@ app.get('/', (req,res) => {
 })
 
 
-app.listen(3000, () => {
-    console.log('dog app server up')
+app.listen(PORT, () => {
+    console.log(`listening on port ${PORT}`)
 })
