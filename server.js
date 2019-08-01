@@ -1,16 +1,17 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
-const session = require('express-session')
+const session = require('express-session');
 const app = express();
 
+require('dotenv').config();
 //require db
-require('./db/db')
+require('./db/db');
 
 //require controllers
-const usersController = require('./controllers/users.js')
-const parksController = require('./controllers/parks.js')
-const authController = require('./controllers/auth.js')
+const usersController = require('./controllers/users.js');
+const parksController = require('./controllers/parks.js');
+const authController = require('./controllers/auth.js');
 
 //middleware 
 app.use(bodyParser.urlencoded({extended:true}))
