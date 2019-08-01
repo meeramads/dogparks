@@ -41,10 +41,29 @@ form{
     background-color: white;
 }
 
+#register-park-form{
+    border-radius: 1rem;
+    margin: 5rem;
+    padding: 3rem;
+    background-color: white;
+}
+
 #register-form{
     border-radius: 1rem;
     margin: 5rem;
     padding: 3rem;
     background-color: white;
+}
 
+#user-edit-form{
+    border-radius: 1rem;
+    margin: 5rem;
+    padding: 3rem;
+    background-color: white;
+}
+
+.fa-paw{
+    margin-top: 10rem;
+    margin-left: 10rem;
+    font-size: 20rem;
 }
