@@ -14,7 +14,7 @@
         <nav class="navbar navbar-expand navbar-default">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <a class="navbar-brand"><span class="fas fa-paw fa-sm"></span></a>
+                    <a class="navbar-brand"><span class="fas fa-paw fa-lg"></span></a>
                 </div>
                 <ul class="nav mr-auto">
                     <li class="nav-item">
@@ -38,14 +38,16 @@
             <a href="/parks/new" id="newpark"><span class="fa fa-plus-circle fa-sm"></span>  New Park</a>
                 <ul>
                     <% for(let i=0; i < parks.length; i++){ %>
-                        <div class="card" style="width: 18rem;">
-                            <img class="card-img-top" src="<%=parks[i].imageSrc%>" alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title"><%=parks[i].name%></h5>
-                                <p class="card-text"><%=parks[i].city%></p>
-                                <a href="/parks/<%=parks[i]._id%>" class="btn btn-primary">Check it out</a>
+                        
+                            <div class="card" style="width: 18rem;">
+                                <img class="card-img-top" src="<%=parks[i].imageSrc%>" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title"><%=parks[i].name%></h5>
+                                    <p class="card-text"><%=parks[i].city%></p>
+                                    <a href="/parks/<%=parks[i]._id%>" class="btn btn-primary">Check it out</a>
+                                </div>
                             </div>
-                        </div>
+                        
                     <% } %>
                 </ul>
         </div>
