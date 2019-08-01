@@ -4,6 +4,10 @@ body{
     background-color: rgb(246, 242, 252);
 }
 
+ul{
+    list-style: none;
+}
+
 #main-heading{
     margin-top: 3rem;
     font-family: 'Pacifico', cursive;
@@ -80,5 +84,9 @@ form{
     margin-top: 5rem;
     margin-left: 10rem;
     font-size: 20rem;
+}
+
+#park-gallery{
+    background-color: white;
 }
 

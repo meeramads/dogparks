@@ -10,43 +10,42 @@
     <link rel="stylesheet" href="/css/style.css" type="text/css">
 </head>
 <body>
-    <nav class="navbar navbar-expand navbar-default">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand"><span class="fas fa-paw fa-sm"></span></a>
-            </div>
-            <ul class="nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="/">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/parks">Parks</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/auth/logout">Log Out</a>
-                </li>
-            </ul>
-        </div>
-    </nav> 
-    
     <header>
-      <div class="container">
+        <nav class="navbar navbar-expand navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand"><span class="fas fa-paw fa-sm"></span></a>
+                </div>
+                <ul class="nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/parks">Parks</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/auth/logout">Log Out</a>
+                    </li>
+                </ul>
+            </div>
+        </nav> 
+    </header>
+    
+    <main>
+      <div id="park-gallery" class="container">
             <h1> Parks Gallery </h1>
             <hr  class="mt-2 mb-2">
             <a href="/parks/new" id="newpark"><span class="fa fa-plus-circle fa-sm"></span>  New Park</a>
-      </div>
-      
-    </header>
-    <main>
-        <div class ="container">
                 <ul>
                     <% for(let i=0; i < parks.length; i++){ %>
-                          <li>
-                              <a href="/parks/<%=parks[i]._id%>"><%=parks[i].name%></a>
-                              <a href="/parks/<%=parks[i]._id%>">
-                                <img class="w-50 h-50" src="<%=parks[i].imageSrc%>">
-                              </a>
-                          </li>
+                        <div class="card" style="width: 18rem;">
+                            <img class="card-img-top" src="<%=parks[i].imageSrc%>" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title"><%=parks[i].name%></h5>
+                                <p class="card-text"><%=parks[i].city%></p>
+                                <a href="/parks/<%=parks[i]._id%>" class="btn btn-primary">Check it out</a>
+                            </div>
+                        </div>
                     <% } %>
                 </ul>
         </div>
