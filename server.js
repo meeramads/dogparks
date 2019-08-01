@@ -12,7 +12,6 @@ const usersController = require('./controllers/users.js')
 const parksController = require('./controllers/parks.js')
 const authController = require('./controllers/auth.js')
 
-
 //middleware 
 app.use(bodyParser.urlencoded({extended:true}))
 app.use(methodOverride('_method'))
