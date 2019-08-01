@@ -28,19 +28,36 @@
         </div>
     </nav> 
     <header>
-        <h1>Park</h1>
+        <div class="container">
+            <h2> <%=park.name%></h2>
+            <h3> <%=park.city%></h3>
+        </div>
     </header>
     <main>
-        <h2> <%=park.name%></h2>
-        <h3> <%=park.city%></h3>
-        <img class="rounded mx-auto d-block" src="<%=park.imageSrc%>">
+        <div class ="container">
+            <div class="row">
+                <img class="rounded mx-auto d-block" src="<%=park.imageSrc%>">
+            </div>
+            <div class="row">
+                <div class="col-sm-3">
+                <form action="/parks/<%=park._id%>?_method=DELETE" method=POST>
+                    <input type="submit" value="Delete Park"/>
+                </form>
+
+                </div>
+                
+                <div class="col-sm-3">
+                <a href="/parks/<%=park._id%>/edit">Edit</a>
+
+                </div>
+                
+            </div>
+        </div>
+        
         <section>
-            <form action="/parks/<%=park._id%>?_method=DELETE" method=POST>
-                <input type="submit" value="Delete Park"/>
-            </form>
         </section>
         <section>
-            <a href="/parks/<%=park._id%>/edit">Edit</a>
+            
         </section>
     </main>
     <script src="https://kit.fontawesome.com/f3c7202777.js"></script>

@@ -9,36 +9,44 @@
     <link rel="stylesheet" href="/css/style.css" type="text/css">
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand navbar-default">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <a class="navbar-brand"><span class="fas fa-paw fa-sm"></span></a>
-                </div>
-                <ul class="nav mr-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/parks">Parks</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/users/<%=user.id%>">Profile</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/auth/logout">Log Out</a>
-                    </li>
-                </ul>
+    <nav class="navbar navbar-expand navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand"><span class="fas fa-paw fa-sm"></span></a>
             </div>
-        </nav>    
+            <ul class="nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/parks">Parks</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/users/<%=user.id%>">Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/auth/logout">Log Out</a>
+                </li>
+            </ul>
+        </div>
+    </nav>    
+    <header>
+        <h1>Dog Park App</h1>
     </header>
     <main>
-        <h1>Welcome, <%=user.username%></h1>
-            
-                <h3>Name: <%=user.name%></h3>
-                <h3>City: <%=user.city%></h3>
-
+        <h1> User profile(show.ejs)</h1>
+            <ul>
+                <li>Name: <%=user.name%></li>
+                <li>Email: <%=user.email%></li>
+                <li>Password: <%=user.password%></li>
+                <li>City: <%=user.city%></li>
+            </ul>
         <a href="/users/<%=user.id%>/edit">Edit</a>
+        <section>
+            <form action="/users/<%=user.id%>?_method=DELETE" method="POST">
+                <input type="submit" value="Delete Account"/>
+            </form>
+        </section>
         <section>
             
             <a href="/parks">View all Parks</a>
@@ -48,18 +56,11 @@
                     <li><%=parks[i].name%></li>
                     <li><%=parks[i].city%></li>
                     <li><%=parks[i].address%></li>
-                    <img src="<%=parks[i].imageSrc%>">
                 </ul>
             <%}%>
             
         </section>
-        <section>
-            <form action="/users/<%=user.id%>?_method=DELETE" method="POST">
-                <input type="submit" value="Delete Account"/>
-            </form>
-        </section>
     </main>
-    <script src="https://kit.fontawesome.com/f3c7202777.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

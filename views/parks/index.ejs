@@ -36,18 +36,20 @@
             <h1> Parks Gallery </h1>
             <hr  class="mt-2 mb-2">
             <a href="/parks/new" id="newpark"><span class="fa fa-plus-circle fa-sm"></span>  New Park</a>
-                <ul>
-                    <% for(let i=0; i < parks.length; i++){ %>
-                        <div class="card" style="width: 18rem;">
-                            <img class="card-img-top" src="<%=parks[i].imageSrc%>" alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title"><%=parks[i].name%></h5>
-                                <p class="card-text"><%=parks[i].city%></p>
-                                <a href="/parks/<%=parks[i]._id%>" class="btn btn-primary">Check it out</a>
-                            </div>
-                        </div>
-                    <% } %>
-                </ul>
+            <div class="row">
+                    <ul>
+                            <% for(let i=0; i < parks.length; i++){ %>
+                                <div class="card" style="width: 18rem;">
+                                    <img class="card-img-top" src="<%=parks[i].imageSrc%>" alt="Card image cap">
+                                    <div class="card-body">
+                                        <h5 class="card-title"><%=parks[i].name%></h5>
+                                        <p class="card-text"><%=parks[i].city%></p>
+                                        <a href="/parks/<%=parks[i]._id%>" class="btn btn-primary">Check it out</a>
+                                    </div>
+                                </div>
+                            <% } %>
+                        </ul>
+            </div>
         </div>
     </main>
     <script src="https://kit.fontawesome.com/f3c7202777.js"></script>
