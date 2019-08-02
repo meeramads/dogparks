@@ -36,9 +36,12 @@ button{
     color: white;
 }
 
-#newpark{
+.icon-route-link{
     color: rgb(113, 113, 113);
     float: right;
+    margin-top: 45px;
+    margin-right: 10px;
+    margin-bottom: 0px;
 }
 
 form{
@@ -99,11 +102,11 @@ header{
 .section-header{
     margin-left: 15px;
     margin-bottom: 0;
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
 .section-subheader{
-    margin-left: 20px;
+    margin-left: 30px;
     margin-bottom: 0;
 }
 
@@ -117,4 +120,13 @@ header{
 
 .btn-checkout{
     margin-bottom: 0px;
+}
+
+#parks-view{
+    margin-top: 15px;
+    float: right;
+}
+
+#showpark-edit-link{
+    margin-top: 60px;
 }

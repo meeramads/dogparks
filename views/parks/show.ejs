@@ -29,28 +29,32 @@
     </nav> 
     <main>
         <div id="park-gallery" class="container">
-
-                <h2 class="section-header"> <%=park.name%></h2>
-                <h3 class="section-subheader"> <%=park.city%></h3>
-            <a href="/parks/<%=park._id%>/edit" id="newpark"><span class="fa fa-edit fa-sm"></span>  Edit</a> 
+            <div class= "row">
+                <div class="col-md-9">
+                    <h2 class="section-header"> <%=park.name%></h2>
+                    <h3 class="section-subheader"> <%=park.city%></h3>
+                </div>
+                <div class="col-md-3 align-text-bottom">
+                    <a href="/parks/<%=park._id%>/edit" class="icon-route-link" id="showpark-edit-link"><span class="fa fa-edit fa-sm"></span>  Edit</a> 
+                </div>
+            </div>
             <hr class="mt-4 mb-4">
             <div class="row">
                 <img class="rounded mx-auto d-block" src="<%=park.imageSrc%>">
             </div>
             
-
-            
-        <div class ="container">
-            <div class="row justify-content-center">
-                <p>Address: <%=park.address%></p>
-            </div>
-            <div class="row">
-                <div class="col-sm-3">
-                    <form action="/parks/<%=park._id%>?_method=DELETE" method=POST>
-                        <input class= "btn btn-primary" type="submit" value="Delete"/>
-                    </form>
+            <div class ="container">
+                <div class="row justify-content-center">
+                    <p>Address: <%=park.address%></p>
                 </div>
-            </div>
+                <div class="row">
+                    <div class="col-sm-3">
+                        <form action="/parks/<%=park._id%>?_method=DELETE" method=POST>
+                            <input class= "btn btn-primary" type="submit" value="Delete"/>
+                        </form>
+                    </div>
+                </div>
+        </div>
         </div>
     </main>
     <script src="https://kit.fontawesome.com/f3c7202777.js"></script>
