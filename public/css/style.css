@@ -21,9 +21,13 @@ nav{
     background-color: rgba(125, 123, 224, 0.952);
 }
 
-button{
+.btn{
     background-color: rgba(125, 123, 224, 0.952);
     color: white;
+}
+
+.btn:hover {
+    background-color: rgba(125, 123, 224, 0.5);
 }
 
 .navbar-nav{
