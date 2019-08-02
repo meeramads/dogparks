@@ -1,3 +1,3 @@
 # dogparks
 
-![wire-frame](https://imgur.com/nhpnUO5)
+![wire-frame](https://i.imgur.com/nhpnUO5.jpg)
