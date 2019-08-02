@@ -31,24 +31,25 @@
     
     <main>
       <div id="park-gallery" class="container">
-            <div class="row section-header">
-                <h1> Parks Gallery </h1>  
+            <div class="row">
+                <h1 class="section-header"> Parks Gallery </h1>  
             </div>
             <a href="/parks/new" id="newpark"><span class="fa fa-plus-circle fa-sm"></span>  New Park</a> 
             <hr class="mt-4 mb-2">
-            <div class="row">
-                    <% for(let i=0; i < parks.length; i++){ %>
-                        <div class="col-md-4 align-items-stretch">
-                        <div class="card" style="width: 18rem;">
+
+            <div class="row justify-content-center" id="gallery">
+                <% for(let i=0; i < parks.length; i++){ %>
+                    <div class="col-md-4 pr-10 align-items-stretch">
+                        <div class="card h-100" style="width: 18rem;">
                             <img class="card-img-top" src="<%=parks[i].imageSrc%>" alt="Card image cap">
                             <div class="card-body">
                                 <h5 class="card-title"><%=parks[i].name%></h5>
                                 <p class="card-text"><%=parks[i].city%></p>
-                                <a href="/parks/<%=parks[i]._id%>" class="btn btn-primary">Check it out</a>
+                                <a class="btn btn-primary btn-checkout" href="/parks/<%=parks[i]._id%>">Check it out</a>
                             </div>
                         </div>
-                        </div>
-                        <% } %>
+                    </div>
+                <% } %>
             </div>
         </div>
     </main>
