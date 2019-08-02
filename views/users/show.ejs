@@ -32,12 +32,21 @@
     </nav>
     <main>
         
-        <div id="park-gallery" class="container">
+        <div class="container gallery">
+
+                
             <div class="row">
-                <h1 class="section-header">Welcome, <%=user.username%></h1>  
+                <div class= "col-md-6">
+
+                    <h1 class="section-header"> Welcome, <%=user.username%> </h1>  
+                    </div>
+                    <div class="col-md-3"></div>
+                    <div class="col-md-3">
+                            <a href="/users/<%=user.id%>/edit" class="icon-route-link" id="user-edit-link"><span class="fa fa-edit fa-sm"></span>  Edit</a> 
+    
+                    </div> 
             </div>
-            <a href="/users/<%=user.id%>/edit" class="icon-route-link"><span class="fa fa-edit fa-sm"></span>  Edit</a> 
-            <hr class="mt-4 mb-2">
+            <hr class="mt-30 mb-2">
 
             <div class="row" >
                 <ul>

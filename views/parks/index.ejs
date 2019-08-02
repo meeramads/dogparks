@@ -30,21 +30,19 @@
     </nav> 
     
     <main>
-      <div id="park-gallery" class="container">
+      <div class="container gallery">
             <div class="row">
                 <div class= "col-md-3">
-
-                <h1 class="section-header"> Parks Gallery </h1>  
+                    <h1 class="section-header"> Parks Gallery </h1>  
                 </div>
                 <div class="col-md-6"></div>
                 <div class="col-md-3">
                         <a href="/parks/new" class="icon-route-link"><span class="fa fa-plus-circle fa-sm"></span>  New Park</a> 
-
                 </div>
             </div>
             <hr class="mt-4 mb-2">
 
-            <div class="row justify-content-center" id="gallery">
+            <div class="row justify-content-center" id="park-gallery">
                 <% for(let i=0; i < parks.length; i++){ %>
                     <div class="col-md-4 pr-10 align-items-stretch">
                         <div class="card h-100" style="width: 18rem;">

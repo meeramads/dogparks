@@ -91,7 +91,7 @@ form{
     font-size: 20rem;
 }
 
-#park-gallery{
+.gallery{
     background-color: white;
     padding-top: 10px;
 }
@@ -116,7 +116,7 @@ header{
     margin: 20 0 10 0;
 }
 
-#gallery{
+#park-gallery{
     padding-left: 42px;
 }
 
