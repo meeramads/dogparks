@@ -94,3 +94,21 @@ header{
     margin-top: 10px;
     margin-bottom: 10px;
 }
+
+.section-header{
+    margin-left: 15px;
+    margin-bottom: 0;
+    margin-top: 30px;
+}
+
+.card{
+    margin: 20 0 10 0;
+}
+
+#gallery{
+    padding-left: 42px;
+}
+
+.btn-checkout{
+    margin-bottom: 0px;
+}
