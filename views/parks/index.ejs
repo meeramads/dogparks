@@ -10,46 +10,54 @@
     <link rel="stylesheet" href="/css/style.css" type="text/css">
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand navbar-default">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <a class="navbar-brand"><span class="fas fa-paw fa-lg"></span></a>
-                </div>
-                <ul class="nav mr-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/parks">Parks</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/auth/logout">Log Out</a>
-                    </li>
-                </ul>
+    <nav class="navbar navbar-expand navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand"><span class="fas fa-paw fa-sm"></span></a>
             </div>
-        </nav> 
-    </header>
+            <ul class="nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/parks">Parks</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/auth/logout">Log Out</a>
+                </li>
+            </ul>
+        </div>
+    </nav> 
     
     <main>
       <div id="park-gallery" class="container">
-            <h1> Parks Gallery </h1>
-            <hr  class="mt-2 mb-2">
-            <a href="/parks/new" id="newpark"><span class="fa fa-plus-circle fa-sm"></span>  New Park</a>
-                <ul>
-                    <% for(let i=0; i < parks.length; i++){ %>
-                        
-                            <div class="card" style="width: 18rem;">
-                                <img class="card-img-top" src="<%=parks[i].imageSrc%>" alt="Card image cap">
-                                <div class="card-body">
-                                    <h5 class="card-title"><%=parks[i].name%></h5>
-                                    <p class="card-text"><%=parks[i].city%></p>
-                                    <a href="/parks/<%=parks[i]._id%>" class="btn btn-primary">Check it out</a>
-                                </div>
+            <div class="row">
+                <div class= "col-md-3">
+
+                <h1 class="section-header"> Parks Gallery </h1>  
+                </div>
+                <div class="col-md-6"></div>
+                <div class="col-md-3">
+                        <a href="/parks/new" class="icon-route-link"><span class="fa fa-plus-circle fa-sm"></span>  New Park</a> 
+
+                </div>
+            </div>
+            <hr class="mt-4 mb-2">
+
+            <div class="row justify-content-center" id="gallery">
+                <% for(let i=0; i < parks.length; i++){ %>
+                    <div class="col-md-4 pr-10 align-items-stretch">
+                        <div class="card h-100" style="width: 18rem;">
+                            <img class="card-img-top" src="<%=parks[i].imageSrc%>" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title"><%=parks[i].name%></h5>
+                                <p class="card-text"><%=parks[i].city%></p>
+                                <a class="btn btn-primary btn-checkout" href="/parks/<%=parks[i]._id%>">Check it out</a>
                             </div>
-                        
-                    <% } %>
-                </ul>
+                        </div>
+                    </div>
+                <% } %>
+            </div>
         </div>
     </main>
     <script src="https://kit.fontawesome.com/f3c7202777.js"></script>
