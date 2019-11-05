@@ -29,7 +29,7 @@
     "get-google-fonts": "^1.2.0",
     "jquery": "^3.4.1",
     "method-override": "^3.0.0",
-    "mongoose": "^5.6.6",
+    "mongoose": "^5.7.5",
     "multer": "^1.4.2",
     "popper.js": "^1.15.0"
   }
